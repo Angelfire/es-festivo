@@ -1,7 +1,6 @@
 {
   "name": "¿Es festivo en Colombia?",
   "description": "¿Es festivo en Colombia?",
-  "short_name": "¿Es festivo en Colombia?",
   "icons": [
     {
       "src": "favicon.ico",
@@ -22,7 +21,8 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "./",
+  "scope": ".",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
