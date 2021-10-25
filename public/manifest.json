@@ -22,7 +22,7 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "https://www.esfestivo.co",
+  "start_url": "./",
   "scope": ".",
   "display": "standalone",
   "theme_color": "#000000",
