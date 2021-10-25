@@ -1,0 +1,29 @@
+.wrapper-rain {
+  position: absolute;
+  min-height: 90vh;
+  width: 93%;
+}
+
+.droplet {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  top: 0;
+  background-color: rgba(0, 0, 0, 1);
+  animation: drops 1s linear infinite;
+}
+
+@for $i from 1 through 200 {
+  $l: random(100);
+  .droplet:nth-child(#{$i}) {
+    left: unquote($l + "%");
+    transform: translate3d(0, 0, 0);
+    animation-delay: 0.01s * $i;
+  }
+
+  @keyframes drops {
+    to {
+      transform: translate3d(0, 100vh, 0);
+    }
+  }
+}

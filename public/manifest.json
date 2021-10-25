@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "¿Es festivo en Colombia?",
+  "description": "¿Es festivo en Colombia?",
+  "short_name": "¿Es festivo en Colombia?",
   "icons": [
     {
       "src": "favicon.ico",
