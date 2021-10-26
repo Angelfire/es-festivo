@@ -9,7 +9,7 @@
   width: 2px;
   height: 2px;
   top: 0;
-  background-color: #999;
+  background-color: var(--droplet);
   animation: drops 1s linear infinite;
 }
 

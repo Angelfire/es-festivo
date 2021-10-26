@@ -1,4 +1,4 @@
-$colors: (#fcd116, #003893, #ce1126);
+$colors: var(--yellow-colombia), var(--blue-colombia), var(--red-colombia);
 
 .wrapper-confetti {
   position: absolute;
