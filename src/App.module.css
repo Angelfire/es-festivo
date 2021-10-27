@@ -1,12 +1,19 @@
 .container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 0.5rem;
   position: relative;
+}
+
+[data-theme="dark"] {
+  --bg-color: #000;
+  --text-color: #fff;
 }
 
 .main {
@@ -41,7 +48,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--black);
+  background-color: var(--text-color);
   content: "";
   opacity: 0.3;
   transform: scaleX(0.7);

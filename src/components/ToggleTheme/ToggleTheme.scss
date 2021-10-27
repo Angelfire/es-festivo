@@ -1,0 +1,44 @@
+.toggleTheme {
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+
+// credit: https://codepen.io/havardob/pen/VwKEjWW
+input[type="checkbox"] {
+  visibility: hidden;
+  &:checked + label {
+    transform: rotate(360deg);
+    background-color: #000;
+    &:before {
+      transform: translateX(90px);
+      background-color: #fff;
+    }
+  }
+}
+
+label {
+  display: flex;
+  width: 142px;
+  height: 48px;
+  border: 6px solid;
+  border-radius: 99em;
+  position: relative;
+  transition: transform 0.75s ease-in-out;
+  transform-origin: 50% 50%;
+  cursor: pointer;
+
+  &:before {
+    transition: transform 0.75s ease;
+    transition-delay: 0.5s;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+    top: 8px;
+    left: 8px;
+  }
+}

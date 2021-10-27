@@ -1,5 +1,6 @@
+import React, { useState } from 'react';
 import Confetti from './components/Confetti/Confetti';
-import Rain from './components/Rain/Rain';
+import ToogleTheme from './components/ToggleTheme/ToggleTheme';
 import {
   daysCountNextHoliday,
   fullHoliday,
@@ -10,14 +11,20 @@ import {
 import styles from './App.module.css';
 
 function App() {
-  const pluralizeFalta = daysCountNextHoliday > 1 ? 'faltan' : 'falta'
+  const [darkMode, setDarkMode] = useState(false);
+
+  const pluralizeFalta = daysCountNextHoliday > 1 ? 'faltan' : 'falta';
+  const darkTheme = darkMode ? 'dark' : 'light';
+
+  const toggleDarkMode = () => setDarkMode(darkMode ? false : true);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-theme={darkTheme}>
+      <ToogleTheme onChangeToogle={toggleDarkMode} />
       <main className={styles.main}>
         {isHolidayToday
           ? <Confetti />
-          : <Rain />
+          : null
         }
 
         <h1 className={styles.title}>

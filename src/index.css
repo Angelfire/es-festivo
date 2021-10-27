@@ -18,7 +18,8 @@ a {
 }
 
 :root {
-  --black: #000;
+  --bg-color: #fff;
+  --text-color: #000;
   --blue-colombia: #003893;
   --droplet: #999;
   --gray: #eaeaea;
