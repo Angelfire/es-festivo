@@ -1,3 +1,8 @@
+[data-theme="dark"] {
+  --bg-color: #000;
+  --text-color: #fff;
+}
+
 .container {
   align-items: center;
   background-color: var(--bg-color);
@@ -9,11 +14,6 @@
   min-height: 100vh;
   padding: 0 0.5rem;
   position: relative;
-}
-
-[data-theme="dark"] {
-  --bg-color: #000;
-  --text-color: #fff;
 }
 
 .main {
