@@ -1,7 +1,18 @@
 {
-  "name": "es-festivo-next",
-  "version": "0.1.0",
-  "private": true,
+  "name": "es-festivo",
+  "description": "¿Es festivo en Colombia?",
+  "version": "3.0.0",
+  "author": {
+    "name": "Andrés Bedoya",
+    "url": "https://srhart.co"
+  },
+  "keywords": [
+    "Colombia",
+    "Colombian",
+    "Holidays",
+    "Feriados",
+    "Festivos"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
