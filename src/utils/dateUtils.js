@@ -1,9 +1,7 @@
 import colombianHolidays from 'colombia-holiday'
 
 const formatDate = (date) => {
-  const holyDate = new Date(date)
-
-  return holyDate.toLocaleString('es-CO', {
+  return date.toLocaleString('es-CO', {
     timeZone: 'America/Bogota',
     weekday: 'long',
     year: 'numeric',
@@ -19,7 +17,7 @@ const getColombianHolidays = (year = new Date().getFullYear()) => {
   const fullHolidays = sumYears.map((holiday, index) => {
     const holidayDate = new Date(holiday.holiday)
     const daysCountNextHoliday = (new Date(holiday.holiday).getTime() - new Date(clearCurrentDate)) / (1000 * 60 * 60 * 24)
-    const holiDayZero = holidayDate.setHours(0, 0, 0, 0)
+    const holidayDateT = new Date(`${holiday.holiday.replace(/\//g, '-')}T00:00:00.000-05:00`)
 
     return {
       index,
@@ -27,8 +25,7 @@ const getColombianHolidays = (year = new Date().getFullYear()) => {
       holidayDate: holiday.holiday,
       holidayCountNext: daysCountNextHoliday,
       holidayName: holiday.holidayName,
-      holidayLocaleDate: formatDate(holidayDate),
-      holidayDateN: formatDate(holiDayZero)
+      holidayLocaleDate: formatDate(holidayDateT)
     }
   })
 
