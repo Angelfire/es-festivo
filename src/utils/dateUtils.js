@@ -16,15 +16,18 @@ const getColombianHolidays = (year = new Date().getFullYear()) => {
   const clearCurrentDate = currentDate.setHours(0, 0, 0, 0)
   const fullHolidays = sumYears.map((holiday, index) => {
     const daysCountNextHoliday = (new Date(holiday.holiday).getTime() - new Date(clearCurrentDate)) / (1000 * 60 * 60 * 24)
-    const holidayDateT = new Date(`${holiday.holiday.replace(/\//g, '-')}T00:00:00.000-00:00`)
+    const holidayDateT = new Date(`${holiday.holiday.replace(/\//g, '-')}T00:00:00.000-05:00`)
 
     return {
       index,
       diff: new Date(clearCurrentDate).getTime() - holidayDateT.getTime(),
       holidayDate: holiday.holiday,
       holidayCountNext: daysCountNextHoliday,
+      holidayCountNextnext: (new Date(holiday.holiday).getTime() - new Date(clearCurrentDate).getTime()) / (1000 * 60 * 60 * 24),
       holidayName: holiday.holidayName,
-      holidayLocaleDate: formatDate(holidayDateT)
+      holidayLocaleDate: formatDate(holidayDateT),
+      clearCurrentDate: new Date(clearCurrentDate),
+      holidayDateT
     }
   })
 
