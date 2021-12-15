@@ -24,7 +24,9 @@ const getColombianHolidays = (year = new Date().getFullYear()) => {
       holidayDate: holiday.holiday,
       holidayCountNext: daysCountNextHoliday,
       holidayName: holiday.holidayName,
-      holidayLocaleDate: formatDate(holidayDateT)
+      holidayLocaleDate: formatDate(holidayDateT),
+      clearCurrentDate: new Date(clearCurrentDate),
+      holidayDateT
     }
   })
 
