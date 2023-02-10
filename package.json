@@ -1,18 +1,7 @@
 {
-  "name": "es-festivo",
-  "description": "¿Es festivo en Colombia?",
-  "version": "3.0.0",
-  "author": {
-    "name": "Andrés Bedoya",
-    "url": "https://srhart.co"
-  },
-  "keywords": [
-    "Colombia",
-    "Colombian",
-    "Holidays",
-    "Feriados",
-    "Festivos"
-  ],
+  "name": "colidays",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -20,16 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "13.1.6",
+    "@types/node": "18.13.0",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "@vercel/analytics": "^0.1.8",
     "colombia-holiday": "^1.0.3",
-    "next": "12.0.1",
-    "next-pwa": "^5.4.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "sass": "^1.43.4"
+    "eslint": "8.33.0",
+    "eslint-config-next": "13.1.6",
+    "next": "13.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "swr": "^2.0.3",
+    "typescript": "4.9.5"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.0.0-beta.7",
-    "eslint": "7.32.0",
-    "eslint-config-next": "12.0.1"
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.2",
+    "tailwindcss": "^3.2.6"
   }
 }
