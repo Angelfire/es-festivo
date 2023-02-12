@@ -27,11 +27,14 @@ export const getHolidays = () => {
   const fullHolidays = sumYears.map((holiday, index) => {
     const daysCountNextHoliday = Math.ceil((new Date(holiday.holiday).getTime() - new Date(currentDate).getTime()) / (1000 * 60 * 60 * 24))
 
+    // Subtract 5 hours (in milliseconds) to get Colombia time
+    // const colombiaTime = new Date(now - 5 * 60 * 60 * 1000);
+
     return {
       index,
       diff: new Date(currentDate).getTime() - new Date(holiday.holiday).getTime(),
       holidayDate: holiday.holiday,
-      holidayCountNext: daysCountNextHoliday + 1,
+      holidayCountNext: daysCountNextHoliday - 1,
       holidayName: holiday.holidayName,
       holidayLocaleDate: formatDate(holiday.holiday)
     }
