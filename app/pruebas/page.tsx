@@ -12,8 +12,14 @@ const formatDate = (date: Date) => {
 }
 
 export default async function IndexPage() {
-  const todayDate = new Date()
-  const formtDate = formatDate(todayDate)
+  const todayDateLocal = new Date()
+  const todayDateServer = new Date()
+  const formtDate = formatDate(todayDateLocal)
 
-  return <>Esta la hora que es en el servidor: {formtDate}</>
+  return (
+    <div>
+      <p>Esta la hora que es en local: {formtDate}</p>
+      <p>Esta la hora que es en server: {todayDateServer}</p>
+    </div>
+  )
 }
