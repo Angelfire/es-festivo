@@ -1,4 +1,4 @@
-export const formatDate = (date: Date) => {
+const formatDate = (date: Date) => {
   return date.toLocaleString("es-CO", {
     timeZone: "America/Bogota",
     weekday: "long",
