@@ -19,13 +19,14 @@ type Holidays = {
 export const getHolidays = () => {
   const currentYear = new Date().getFullYear()
   const currentDate = new Date()
+  const now = Date.now()
   const currentYearHolidays = colombianHolidays(currentYear) as Holidays[]
   const nextYeartHolidays = colombianHolidays(currentYear + 1) as Holidays[]
 
   const sumYears: Holidays[] = [...currentYearHolidays, ...nextYeartHolidays]
   
   const fullHolidays = sumYears.map((holiday, index) => {
-    const daysCountNextHoliday = Math.ceil((new Date(holiday.holiday).getTime() - new Date(currentDate).getTime()) / (1000 * 60 * 60 * 24))
+    const daysCountNextHoliday = Math.ceil(((new Date(holiday.holiday).getTime() - new Date(currentDate).getTime()) - new Date(now - 5 * 60 * 60 * 1000).getTime()) / (1000 * 60 * 60 * 24))
 
     // Subtract 5 hours (in milliseconds) to get Colombia time
     // const colombiaTime = new Date(now - 5 * 60 * 60 * 1000);
