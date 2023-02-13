@@ -26,10 +26,11 @@ export const getHolidays = () => {
   const sumYears: Holidays[] = [...currentYearHolidays, ...nextYeartHolidays]
   
   const fullHolidays = sumYears.map((holiday, index) => {
-    const daysCountNextHoliday = Math.ceil((new Date(holiday.holiday).getTime() - new Date(currentDate).getTime()) / (1000 * 60 * 60 * 24))
-
     // Subtract 5 hours (in milliseconds) to get Colombia time
-    // const colombiaTime = new Date(now - 5 * 60 * 60 * 1000);
+    // const colombiaTime = new Date(now - 5 * 60 * 60 * 1000)
+  
+    // This is to make the date work on the server, 5 hours are subtracted so that the calculation is GMT -5
+    const daysCountNextHoliday = Math.ceil(((new Date(holiday.holiday).getTime() - new Date(currentDate).getTime()) - new Date(now - 5 * 60 * 60 * 1000).getMilliseconds()) / (1000 * 60 * 60 * 24))
 
     return {
       index,
