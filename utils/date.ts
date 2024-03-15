@@ -36,7 +36,7 @@ export const getHolidays = () => {
       index,
       diff: new Date(currentDate).getTime() - new Date(holiday.holiday).getTime(),
       holidayDate: holiday.holiday,
-      holidayCountNext: daysCountNextHoliday - 1,
+      holidayCountNext: daysCountNextHoliday,
       holidayName: holiday.holidayName,
       holidayLocaleDate: formatDate(holiday.holiday)
     }
